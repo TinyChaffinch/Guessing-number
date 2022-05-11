@@ -1,17 +1,19 @@
-var randomNumber = Math.floor(Math.random() * 100) + 1;
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-var guesses = document.querySelector('.guesses');
-var lastResult = document.querySelector('.lastResult');
-var lowOrHi = document.querySelector('.lowOrHi');
+let guesses = document.querySelector('.guesses');
+let lastResult = document.querySelector('.lastResult');
+let lowOrHi = document.querySelector('.lowOrHi');
 
-var guessSubmit = document.querySelector('.guessSubmit');
-var guessField = document.querySelector('.guessField');
+let guessSubmit = document.querySelector('.guessSubmit');
+let guessField = document.querySelector('.guessField');
 
-var guessCount = 1;
-var resetButton;
+let guessCount = 1;
+let resetButton;
+
+guessField.focus();
 
 function checkGuess() {
-    var userGuess = Number(guessField.value);
+    let userGuess = Number(guessField.value);
     if (guessCount === 1) {
         guesses.textContent = 'Ваши предположения: ';
     }
@@ -46,7 +48,7 @@ function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
-    resetButton.textContent = 'Start new game';
+    resetButton.textContent = 'Начать новую игру';
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }

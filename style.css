@@ -3,6 +3,13 @@ html {
 }
 
 body {
+    display: grid;
+    justify-items: center;
+    background-image: url(fon.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 2px black;
     width: 50%;
     max-width: 800px;
     min-width: 480px;
