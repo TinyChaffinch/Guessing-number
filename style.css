@@ -10,13 +10,18 @@ body {
     color: white;
     text-align: center;
     text-shadow: 4px 4px 2px black;
-    width: 50%;
+    width: 90%;
     max-width: 800px;
-    min-width: 480px;
+    min-width: 280px;
     margin: 0 auto;
+    word-wrap: normal;
 }
 
 .lastResult {
     color: white;
     padding: 3px;
+}
+
+.guessSubmit {
+    margin-top: 10px;
 }
