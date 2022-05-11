@@ -12,6 +12,10 @@ let resetButton;
 
 guessField.focus();
 
+function rgb(r,g,b) {
+    return 'rgb(' + [(r||0),(g||0),(b||0)].join(',') + ')';
+}
+
 function checkGuess() {
     let userGuess = Number(guessField.value);
     if (guessCount === 1) {
@@ -20,8 +24,8 @@ function checkGuess() {
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
+        lastResult.style.color = rgb(51,255,51);
         lastResult.textContent = 'Поздравляю! Вы угадали число!';
-        lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         setGameOver();
     } else if (guessCount === 10) {
@@ -29,7 +33,7 @@ function checkGuess() {
         setGameOver();
     } else {
         lastResult.textContent = 'Неверно!';
-        lastResult.style.backgroundColor = 'red';
+        lastResult.style.color = rgb(255,36,0);
         if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Загаданое число больше!';
         } else if (userGuess > randomNumber) {
@@ -67,8 +71,6 @@ function resetGame() {
     guessSubmit.disabled = false;
     guessField.value = '';
     guessField.focus();
-  
-    lastResult.style.backgroundColor = 'white';
   
     randomNumber = Math.floor(Math.random() * 100) + 1;
   }
