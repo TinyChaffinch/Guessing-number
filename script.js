@@ -1,6 +1,7 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 let guesses = document.querySelector('.guesses');
+let trys = document.querySelector('.trys');
 let lastResult = document.querySelector('.lastResult');
 let lowOrHi = document.querySelector('.lowOrHi');
 
@@ -42,6 +43,7 @@ function checkGuess() {
     }
 
     guessCount++;
+    trys.textContent = 'Количество попыток: ' + String(guessCount-1) + " из 10";
     guessField.value = '';
     guessField.focus();
 }
