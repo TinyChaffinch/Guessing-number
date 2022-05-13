@@ -18,7 +18,7 @@
 
     <div class="form">
         <label for="guessField">Введите число: </label>
-        <input type="number" min="0" max="100" id="guessField" class="guessField">
+        <input type="number" min="0" max="100" id="guessField" class="guessField" placeholder="0 - 100" oninput="changeHandler(this)" onkeyup="isright(this)">
         <input type="submit" value="Попробовать" class="guessSubmit">
     </div>
 

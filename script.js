@@ -13,8 +13,8 @@ let resetButton;
 
 guessField.focus();
 
-function rgb(r,g,b) {
-    return 'rgb(' + [(r||0),(g||0),(b||0)].join(',') + ')';
+function rgb(r, g, b) {
+    return 'rgb(' + [(r || 0), (g || 0), (b || 0)].join(',') + ')';
 }
 
 function checkGuess() {
@@ -25,7 +25,7 @@ function checkGuess() {
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
-        lastResult.style.color = rgb(51,255,51);
+        lastResult.style.color = rgb(51, 255, 51);
         lastResult.textContent = 'Поздравляю! Вы угадали число!';
         lowOrHi.textContent = '';
         setGameOver();
@@ -34,7 +34,7 @@ function checkGuess() {
         setGameOver();
     } else {
         lastResult.textContent = 'Неверно!';
-        lastResult.style.color = rgb(255,36,0);
+        lastResult.style.color = rgb(255, 36, 0);
         if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Загаданое число больше!';
         } else if (userGuess > randomNumber) {
@@ -43,7 +43,7 @@ function checkGuess() {
     }
 
     guessCount++;
-    trys.textContent = 'Количество попыток: ' + String(guessCount-1) + " из 10";
+    trys.textContent = 'Количество попыток: ' + String(guessCount - 1) + " из 10";
     guessField.value = '';
     guessField.focus();
 }
@@ -61,18 +61,29 @@ function setGameOver() {
 
 function resetGame() {
     guessCount = 1;
-  
+
     var resetParas = document.querySelectorAll('.resultParas p');
-    for (var i = 0 ; i < resetParas.length ; i++) {
-      resetParas[i].textContent = '';
+    for (var i = 0; i < resetParas.length; i++) {
+        resetParas[i].textContent = '';
     }
-  
+
     resetButton.parentNode.removeChild(resetButton);
-  
+
     guessField.disabled = false;
     guessSubmit.disabled = false;
     guessField.value = '';
     guessField.focus();
-  
+
     randomNumber = Math.floor(Math.random() * 100) + 1;
-  }
+}
+
+const changeHandler = e => {
+    const value = e.value;
+    e.value = value.replace(/\D/g, '');
+}
+
+function isright(obj)
+{
+    if (obj.value > 100) obj.value = 100;
+    if (obj.value < 1) obj.value = 1;
+}
