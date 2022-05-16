@@ -3,6 +3,7 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
 let guesses = document.querySelector('.guesses');
 let trys = document.querySelector('.trys');
 let lastResult = document.querySelector('.lastResult');
+let hidenNum = document.querySelector('.hidenNum');
 let lowOrHi = document.querySelector('.lowOrHi');
 
 let guessSubmit = document.querySelector('.guessSubmit');
@@ -31,6 +32,7 @@ function checkGuess() {
         setGameOver();
     } else if (guessCount === 10) {
         lastResult.textContent = '!!!ИГРА ОКОНЧЕНА!!!';
+        hidenNum.textContent = 'Загаданным числом было: ' + randomNumber;
         setGameOver();
     } else {
         lastResult.textContent = 'Неверно!';
