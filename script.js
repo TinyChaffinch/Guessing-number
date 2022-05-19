@@ -12,6 +12,7 @@ let guessField = document.querySelector('.guessField');
 let guessCount = 1;
 let resetButton;
 
+guessSubmit.disabled = true;
 guessField.focus();
 
 function rgb(r, g, b) {
@@ -86,6 +87,11 @@ const changeHandler = e => {
 
 function isright(obj)
 {
+    if (obj.value == '') {
+        guessSubmit.disabled = true;
+    } else {
+        guessSubmit.disabled = false;
+    }
     if (obj.value > 100) obj.value = 100;
     if (obj.value < 1) obj.value = '';
 }
