@@ -87,5 +87,5 @@ const changeHandler = e => {
 function isright(obj)
 {
     if (obj.value > 100) obj.value = 100;
-    if (obj.value < 1) obj.value = 1;
+    if (obj.value < 1) obj.value = '';
 }

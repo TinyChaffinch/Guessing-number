@@ -2,11 +2,37 @@ html {
     font-family: sans-serif;
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/800/600) no-repeat;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 720px) {
+    body {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/1280/720) no-repeat;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1080px) {
+    body {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/1920/1080) no-repeat;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    body {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/2560/1440) no-repeat;
+        background-size: cover;
+    }
+}
+
 body {
     display: grid;
     justify-items: center;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/1440/1080) no-repeat;
-    background-size: cover;
     color: white;
     text-align: center;
     text-shadow: 4px 4px 2px black;
