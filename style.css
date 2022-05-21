@@ -1,5 +1,38 @@
+@font-face {
+    font-family: 'nautilus';
+    src: url('nautilus-webfont.woff2') format('woff2'),
+        url('nautilus-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
-    font-family: sans-serif;
+    font-family: 'nautilus';
+    font-size: 1.5rem;
+}
+
+body {
+    display: grid;
+    background-image: url(fon.jpg);
+    justify-items: center;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 2px black;
+    height: 100vh;
+    width: 90%;
+    max-width: 800px;
+    min-width: 280px;
+    margin: 0 auto;
+    word-wrap: normal;
+}
+
+.lastResult {
+    color: white;
+    padding: 3px;
+}
+
+.guessSubmit {
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -28,27 +61,4 @@ html {
         background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/2560/1440) no-repeat;
         background-size: cover;
     }
-}
-
-body {
-    display: grid;
-    justify-items: center;
-    color: white;
-    text-align: center;
-    text-shadow: 4px 4px 2px black;
-    height: 100vh;
-    width: 90%;
-    max-width: 800px;
-    min-width: 280px;
-    margin: 0 auto;
-    word-wrap: normal;
-}
-
-.lastResult {
-    color: white;
-    padding: 3px;
-}
-
-.guessSubmit {
-    margin-top: 10px;
 }

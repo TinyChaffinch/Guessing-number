@@ -85,8 +85,7 @@ const changeHandler = e => {
     e.value = value.replace(/\D/g, '');
 }
 
-function isright(obj)
-{
+function isright(obj) {
     if (obj.value == '') {
         guessSubmit.disabled = true;
     } else {

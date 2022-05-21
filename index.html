@@ -14,11 +14,12 @@
     <h1>Угадай число</h1>
 
     <p>Вам будет загадано число от 1 до 100. У вас есть 10 попыток, чтобы его угадать. Мы будем подсказывать вам больше
-        или меньше загаданое число по отношению к вашему. Удачи</p>
+        или меньше загаданое число по отношению к вашему. Удачи!</p>
 
     <div class="form">
         <label for="guessField">Введите число: </label>
-        <input type="number" min="0" max="100" id="guessField" class="guessField" placeholder="0 - 100" oninput="changeHandler(this)" onkeyup="isright(this)">
+        <input type="number" min="0" max="100" id="guessField" class="guessField" placeholder="0 - 100"
+            oninput="changeHandler(this)" onkeyup="isright(this)">
         <input type="submit" value="Попробовать" class="guessSubmit">
     </div>
 
