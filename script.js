@@ -47,6 +47,7 @@ function checkGuess() {
 
     guessCount++;
     trys.textContent = 'Количество попыток: ' + String(guessCount - 1) + " из 10";
+    guessSubmit.disabled = true;
     guessField.value = '';
     guessField.focus();
 }
