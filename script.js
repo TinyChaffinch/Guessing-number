@@ -16,6 +16,7 @@ let resetButton;
 
 guessField.disabled = true;
 guessSubmit.disabled = true;
+startEndBut.disabled = true;
 guessField.focus();
 
 function rgb(r, g, b) {
@@ -122,8 +123,10 @@ function isright(obj) {
 }
 
 function randisright(obj) {
-    if (obj.value == '') {
-        guessSubmit.disabled = true;
+    if (startNum.value == '') {
+        startEndBut.disabled = true;
+    } else {
+        startEndBut.disabled = false;
     }
     if (Number(endNum.value) - Number(startNum.value) < 20) {
         endNum.value = Number(startNum.value) + 20;
