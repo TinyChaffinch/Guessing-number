@@ -16,7 +16,6 @@ let resetButton;
 
 guessField.disabled = true;
 guessSubmit.disabled = true;
-startEndBut.disabled = true;
 guessField.focus();
 
 function rgb(r, g, b) {
@@ -24,14 +23,18 @@ function rgb(r, g, b) {
 }
 
 function startGame() {
-    let startRand = Number(startNum.value);
-    let endRand = Number(endNum.value);
-    randomNumber = Math.floor(Math.random() * (startRand - endRand + 1)) + endRand;
-    guessField.placeholder = String(startRand) + ' - ' + String(endRand);
-    startNum.disabled = true;
-    endNum.disabled = true;
-    guessField.disabled = false;
-    startEndBut.disabled = true;
+    if (Number(endNum.value)-Number(startNum.value) < 20) {
+        alert('Вы ввели некоректные данные');
+    } else {
+        let startRand = Number(startNum.value);
+        let endRand = Number(endNum.value);
+        randomNumber = Math.floor(Math.random() * (startRand - endRand + 1)) + endRand;
+        guessField.placeholder = String(startRand) + ' - ' + String(endRand);
+        startNum.disabled = true;
+        endNum.disabled = true;
+        guessField.disabled = false;
+        startEndBut.disabled = true;
+    }
 }
 
 startEndBut.addEventListener('click', startGame);
@@ -119,16 +122,5 @@ function isright(obj) {
     }
     if (obj.value >= startNum.value) {
         guessSubmit.disabled = false;
-    }
-}
-
-function randisright(obj) {
-    if (startNum.value == '') {
-        startEndBut.disabled = true;
-    } else {
-        startEndBut.disabled = false;
-    }
-    if (Number(endNum.value) - Number(startNum.value) < 20) {
-        endNum.value = Number(startNum.value) + 20;
     }
 }
