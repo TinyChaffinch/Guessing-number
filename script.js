@@ -1,5 +1,6 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-
+let startNum = document.querySelector('.startNum');
+let endNum = document.querySelector('.endNum');
+let startEndBut = document.querySelector('.startEndBut');
 let guesses = document.querySelector('.guesses');
 let trys = document.querySelector('.trys');
 let lastResult = document.querySelector('.lastResult');
@@ -9,15 +10,30 @@ let lowOrHi = document.querySelector('.lowOrHi');
 let guessSubmit = document.querySelector('.guessSubmit');
 let guessField = document.querySelector('.guessField');
 
+let randomNumber;
 let guessCount = 1;
 let resetButton;
 
+guessField.disabled = true;
 guessSubmit.disabled = true;
 guessField.focus();
 
 function rgb(r, g, b) {
     return 'rgb(' + [(r || 0), (g || 0), (b || 0)].join(',') + ')';
 }
+
+function startGame() {
+    let startRand = Number(startNum.value);
+    let endRand = Number(endNum.value);
+    randomNumber = Math.floor(Math.random() * (startRand - endRand + 1)) + endRand;
+    guessField.placeholder = String(startRand) + ' - ' + String(endRand);
+    startNum.disabled = true;
+    endNum.disabled = true;
+    guessField.disabled = false;
+    startEndBut.disabled = true;
+}
+
+startEndBut.addEventListener('click', startGame);
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
@@ -74,8 +90,11 @@ function resetGame() {
 
     resetButton.parentNode.removeChild(resetButton);
 
-    guessField.disabled = false;
-    guessSubmit.disabled = false;
+    startNum.disabled = false;
+    endNum.disabled = false;
+    guessField.disabled = true;
+    guessSubmit.disabled = true;
+    startEndBut.disabled = false;
     guessField.value = '';
     guessField.focus();
 
@@ -93,6 +112,9 @@ function isright(obj) {
     } else {
         guessSubmit.disabled = false;
     }
-    if (obj.value > 100) obj.value = 100;
-    if (obj.value < 1) obj.value = '';
+    if (obj.value > Number(endNum.value)) obj.value = Number(endNum.value);
+    if (obj.value < startNum.value) {
+        obj.value = '';
+        guessSubmit.disabled = true;
+    }
 }

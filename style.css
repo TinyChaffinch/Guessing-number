@@ -33,7 +33,7 @@ body {
     padding: 3px;
 }
 
-.guessSubmit {
+.guessSubmit, .resetButton, .startEndBut {
     margin-top: 10px;
     padding: 0px 10px 0px 10px;
     font-family: 'Benguiat Rus', arial;
@@ -46,23 +46,11 @@ body {
     border-radius: 50px;
 }
 
-.guessSubmit:hover {
-    border: inset 4px white;
+.startEndBut {
+    margin: 10px;
 }
 
-.resetButton {
-    padding: 0px 10px 0px 10px;
-    font-family: 'Benguiat Rus', arial;
-    height: 1.5rem;
-    font-weight:bold;
-    border: outset 4px white;
-    background: -webkit-linear-gradient(135deg, rgb(172, 172, 172), rgb(255, 255, 255));
-    box-shadow: 5px 5px 8px 0 #000000;
-    text-shadow: 1px 1px 13px #000000;
-    border-radius: 50px;
-}
-
-.resetButton:hover {
+.guessSubmit:hover, .resetButton:hover, .startEndBut:hover {
     border: inset 4px white;
 }
 

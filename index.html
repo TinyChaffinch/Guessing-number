@@ -13,13 +13,25 @@
 <body>
     <h1>Угадай число</h1>
 
-    <p>Вам будет загадано число от 1 до 100. У вас есть 10 попыток, чтобы его угадать. Мы будем подсказывать вам больше
+    <p class="conditionText">Вам будет загадано число в выбранном вами диапозоне. У вас есть 10
+        попыток, чтобы его угадать. Мы будем подсказывать вам больше
         или меньше загаданое число по отношению к вашему. Удачи!</p>
 
     <div class="form">
+        <p>
+            <label for="startNum">Введите начальное число: </label>
+            <input type="number" id="startNum" class="startNum" oninput="changeHandler(this)">
+        </p>
+        <p>
+            <label for="endNum">Введите конечное число: </label>
+            <input type="number" id="endNum" class="endNum" oninput="changeHandler(this)">
+        </p>
+        <input type="submit" value="Начать" class="startEndBut">
+
+    </div>
+    <div class="form">
         <label for="guessField">Введите число: </label>
-        <input type="number" min="0" max="100" id="guessField" class="guessField" placeholder="0 - 100"
-            oninput="changeHandler(this)" onkeyup="isright(this)">
+        <input type="number" id="guessField" class="guessField" oninput="changeHandler(this)" onkeyup="isright(this)">
         <input type="submit" value="Попробовать" class="guessSubmit">
     </div>
 
