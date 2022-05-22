@@ -109,12 +109,23 @@ const changeHandler = e => {
 function isright(obj) {
     if (obj.value == '') {
         guessSubmit.disabled = true;
-    } else {
+    }
+    if (obj.value > Number(endNum.value)) {
+        obj.value = Number(endNum.value);
+    }
+    if (obj.value < startNum.value) {
+        guessSubmit.disabled = true;
+    }
+    if (obj.value >= startNum.value) {
         guessSubmit.disabled = false;
     }
-    if (obj.value > Number(endNum.value)) obj.value = Number(endNum.value);
-    if (obj.value < startNum.value) {
-        obj.value = '';
+}
+
+function randisright(obj) {
+    if (obj.value == '') {
         guessSubmit.disabled = true;
+    }
+    if (Number(endNum.value) - Number(startNum.value) < 20) {
+        endNum.value = Number(startNum.value) + 20;
     }
 }
