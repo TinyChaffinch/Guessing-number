@@ -20,19 +20,20 @@
     <div class="form">
         <p>
             <label for="startNum">Введите начальное число: </label>
-            <input type="number" id="startNum" class="startNum" oninput="changeHandler(this)"
-                onkeyup="randisright(this)" required>
+            <input type="number" id="startNum" class="startNum" oninput="changeHandler(this)" required>
         </p>
         <p>
             <label for="endNum">Введите конечное число: </label>
-            <input type="number" id="endNum" class="endNum" oninput="changeHandler(this)" onkeyup="randisright(this)" required>
+            <input type="number" id="endNum" class="endNum" oninput="changeHandler(this)" required>
         </p>
-        <input type="submit" value="Начать" class="startEndBut">
 
+        <p class="timer">Таймер <input type="checkbox" class="timecheck"></p>
+        <input type="submit" value="Начать" class="startEndBut">
     </div>
     <div class="form">
         <label for="guessField">Введите число: </label>
-        <input type="number" id="guessField" class="guessField" oninput="changeHandler(this)" onkeyup="isright(this)" required>
+        <input type="number" id="guessField" class="guessField" oninput="changeHandler(this)" onkeyup="isright(this)"
+            required>
         <input type="submit" value="Попробовать" class="guessSubmit">
     </div>
 
