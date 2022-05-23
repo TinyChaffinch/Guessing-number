@@ -83,7 +83,7 @@ function checkGuess() {
         lastResult.style.color = rgb(51, 255, 51);
         lastResult.textContent = 'Поздравляю! Вы угадали число!';
         lowOrHi.textContent = '';
-        clearInterval(timeCounter);
+        clearInterval(timeCounter); //Остановка таймера
         setGameOver();
     } else if (guessCount === 10) {
         lastResult.textContent = '!!!ИГРА ОКОНЧЕНА!!!';
@@ -169,3 +169,13 @@ function isright(obj) {
         guessSubmit.disabled = false;
     }
 }
+
+//Реагирование input на enter
+
+guessField.addEventListener('keydown', (e) => {
+    if (guessSubmit.disabled == false) {
+        if (e.keyCode === 13) {
+            checkGuess();
+        }
+    }
+});

@@ -15,8 +15,10 @@
 
     <p class="conditionText">Вам будет загадано число в выбранном вами диапозоне. Минимальная разница между числами не
         может быть меньше 20. У вас есть 10 попыток, чтобы его угадать. Мы будем подсказывать вам больше
-        или меньше загаданое число по отношению к вашему. Удачи!</p>
+        или меньше загаданое число по отношению к вашему. По желанию вы можете включить таймер на 60 секунд. Удачи!</p>
 
+    <!-- Блок желаемых границ и таймера -->
+    
     <div class="form">
         <p>
             <label for="startNum">Введите начальное число: </label>
@@ -30,12 +32,17 @@
         <p class="timer">Таймер <input type="checkbox" class="timecheck"></p>
         <input type="submit" value="Начать" class="startEndBut">
     </div>
+
+    <!-- Блок самой игры -->
+
     <div class="form">
         <label for="guessField">Введите число: </label>
         <input type="number" id="guessField" class="guessField" oninput="changeHandler(this)" onkeyup="isright(this)"
             required>
         <input type="submit" value="Попробовать" class="guessSubmit">
     </div>
+
+    <!-- Место вывода информации во время игры -->
 
     <div class="resultParas">
         <p class="guesses"></p>
