@@ -52,7 +52,7 @@ function timerCount() {
 
 function startGame() {
     if (Number(endNum.value) - Number(startNum.value) < 20) {
-        alert('Вы ввели некоректные данные');
+        alert('Вы ввели некоректные данные. Разница между числами должна составлять минимум 20');
     } else {
         if (timecheck.checked) {
             timerCount();
@@ -168,6 +168,14 @@ function isright(obj) {
     if (obj.value >= Number(startNum.value)) {
         guessSubmit.disabled = false;
     }
+
+}
+
+//Добавление подсказки минимально возможного числа во второй input
+
+function placeholderHelp() {
+    let area = Number(startNum.value) + 20;
+    endNum.setAttribute('placeholder', String(area));
 }
 
 //Реагирование input на enter
