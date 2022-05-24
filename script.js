@@ -17,6 +17,7 @@ let guessField = document.querySelector('.guessField');
 let randomNumber;
 let guessCount = 1;
 let resetButton;
+let wintime = -1;
 
 let timeCounter;
 
@@ -38,6 +39,7 @@ function timerCount() {
         () => {
             i--;
             timer.textContent = 'Осталось: ' + i + ' секунд';
+            wintime++;
             if (i === 0) {
                 clearInterval(timeCounter);
                 timer.textContent = 'Таймер ';
@@ -81,7 +83,11 @@ function checkGuess() {
 
     if (userGuess === randomNumber) {
         lastResult.style.color = rgb(51, 255, 51);
-        lastResult.textContent = 'Поздравляю! Вы угадали число!';
+        if (timecheck.checked) {
+            lastResult.textContent = 'Поздравляю! Вы угадали число за ' + wintime + ' секунд!';
+        } else {
+            lastResult.textContent = 'Поздравляю! Вы угадали число!';
+        }
         lowOrHi.textContent = '';
         clearInterval(timeCounter); //Остановка таймера
         setGameOver();
