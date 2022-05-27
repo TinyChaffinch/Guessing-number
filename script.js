@@ -92,6 +92,7 @@ function checkGuess() {
         clearInterval(timeCounter); //Остановка таймера
         setGameOver();
     } else if (guessCount === 10) {
+        clearInterval(timeCounter);
         lastResult.textContent = '!!!ИГРА ОКОНЧЕНА!!!';
         hidenNum.textContent = 'Загаданным числом было: ' + randomNumber;
         setGameOver();
