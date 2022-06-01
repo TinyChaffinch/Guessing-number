@@ -1,3 +1,5 @@
+//Блок перменных созданных для взаимодействия с содержимым
+
 let startNum = document.querySelector('.startNum');
 let endNum = document.querySelector('.endNum');
 let startEndBut = document.querySelector('.startEndBut');
@@ -14,12 +16,16 @@ let lowOrHi = document.querySelector('.lowOrHi');
 let guessSubmit = document.querySelector('.guessSubmit');
 let guessField = document.querySelector('.guessField');
 
+//Блок переменных
+
 let randomNumber;
 let guessCount = 1;
 let resetButton;
 let wintime = -1;
 
 let timeCounter;
+
+//События при загрузке страницы
 
 guessField.disabled = true;
 guessSubmit.disabled = true;
@@ -66,6 +72,8 @@ function startGame() {
         startNum.disabled = true;
         endNum.disabled = true;
         guessField.disabled = false;
+        guessField.setAttribute('min',String(startRand));
+        guessField.setAttribute('max',String(endRand));
         startEndBut.disabled = true;
     }
 }
@@ -181,7 +189,9 @@ function isright(obj) {
 //Добавление подсказки минимально возможного числа во второй input
 
 function placeholderHelp() {
+    let startRand = Number(startNum.value);
     let area = Number(startNum.value) + 20;
+    endNum.setAttribute('min',String(startRand));
     endNum.setAttribute('placeholder', String(area));
 }
 
