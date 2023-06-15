@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Benguiat Rus';
-    src: url('fonts/Benguiat.woff2') format('woff2'), url('fonts/Benguiat.woff') format('woff');
+    src: url('fonts/Benguiat.woff2') format('woff2'),
+         url('fonts/Benguiat.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -13,7 +14,8 @@ html {
 
 body {
     display: grid;
-    background-image: url(fon.jpg);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(fon.jpg) no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     justify-items: center;
     color: #FFF;
@@ -77,7 +79,7 @@ input[type="number"]:focus {
 }
 
 /* Подбор фона в зависимости от разрешения */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     body {
         background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://picsum.photos/800/600) no-repeat;
         background-size: cover;
@@ -107,4 +109,4 @@ input[type="number"]:focus {
         background-size: cover;
         background-attachment: fixed;
     }
-}
+} */
